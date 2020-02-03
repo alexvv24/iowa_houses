@@ -4,7 +4,7 @@ library(ggplot2)
 library(corrplot)
 library(ggrepel)
 
-setwd("~/OneDrive/Estudio/Kaggle/iowa_houses/")
+setwd("GitHub/iowa_houses/")
 train <- read.csv("train.csv", stringsAsFactors = F, na.strings = "NA")
 test <- read.csv("test.csv", stringsAsFactors = F, na.strings = "NA")
 
@@ -85,3 +85,4 @@ for (i in 1:nrow(df)){
 
 df$LotShape <- as.integer(revalue(df$LotShape, c("IR3" = 0, "IR2" = 1, "IR1" = 2, "Reg" = 3)))
 
+df$LotConfig <- as.factor(df$LotConfig)
